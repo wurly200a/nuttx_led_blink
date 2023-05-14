@@ -1,0 +1,21 @@
+include $(APPDIR)/Make.defs
+
+# led_blink built-in application info
+
+CONFIG_APP_LED_BLINK_PRIORITY ?= SCHED_PRIORITY_DEFAULT
+CONFIG_APP_LED_BLINK_STACKSIZE ?= 2048
+
+APPNAME = led_blink
+PRIORITY = $(CONFIG_APP_LED_BLINK_PRIORITY)
+STACKSIZE = $(CONFIG_APP_LED_BLINK_STACKSIZE)
+
+# led blink application
+
+ASRCS =
+CSRCS =
+MAINSRC = led_blink_main.c
+
+CONFIG_APP_LED_BLINK_PROGNAME ?= led_blink$(EXEEXT)
+PROGNAME = $(CONFIG_APP_LED_BLINK_PROGNAME)
+
+include $(APPDIR)/Application.mk

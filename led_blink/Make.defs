@@ -1,0 +1,3 @@
+ifeq ($(CONFIG_APP_LED_BLINK),y)
+CONFIGURED_APPS += external/led_blink
+endif

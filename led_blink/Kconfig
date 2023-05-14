@@ -1,0 +1,30 @@
+#
+# For a description of the syntax of this configuration file,
+# see the file kconfig-language.txt in the NuttX tools repository.
+#
+ 
+config APP_LED_BLINK
+	bool "led blink application"
+	default n
+	---help---
+		Enable the led blink application
+ 
+if APP_LED_BLINK
+ 
+config APP_LED_BLINK_PROGNAME
+	string "Program name"
+	default "led_blink"
+	depends on BUILD_KERNEL
+	---help---
+		This is the name of the program that will be use when the NSH ELF
+		program is installed.
+ 
+config APP_LED_BLINK_PRIORITY
+	int "led_blink task priority"
+	default 100
+ 
+config APP_LED_BLINK_STACKSIZE
+	int "led_blink stack size"
+	default 2048
+ 
+endif
